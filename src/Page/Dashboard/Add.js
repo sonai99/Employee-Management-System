@@ -17,6 +17,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
     const handleAdd = e => {
         e.preventDefault();
+        //need to fill all input fields
         if (!firstName || !lastName || !email || !salary || !date) {
             return Swal.fire({
                 icon: 'error',
@@ -25,7 +26,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
                 showConfirmButton: true
             });
         }
-
+        //giving new id to new employee datd
         const id = employees.length + 1;
         const newEmployee = {
             id,
@@ -35,8 +36,8 @@ function Add({ employees, setEmployees, setIsAdding }) {
             salary,
             date
         }
-        employees.push(newEmployee);
-        setEmployees(employees);
+        employees.push(newEmployee); //push new employee in previous dataset
+        setEmployees(employees);    //change state
         setIsAdding(false);
 
         Swal.fire({
