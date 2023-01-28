@@ -31,7 +31,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
             salary,
             date
         };
-
+        //when id matches the employee id to edit, it just adds new "employee" data using the splice method in JavaScript
         for (let i = 0; i < employees.length; i++) {
             if (employees[i].id === id) {
                 employees.splice(i, 1, employee);
